@@ -1,0 +1,57 @@
+{
+  "name": "techdesk",
+  "version": "1.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "node --import tsx scripts/dev.ts",
+    "dev:external": "node node_modules/next/dist/bin/next dev",
+    "build": "node node_modules/next/dist/bin/next build",
+    "start": "node node_modules/next/dist/bin/next start",
+    "lint": "node node_modules/eslint/bin/eslint.js .",
+    "typecheck": "node node_modules/typescript/bin/tsc --noEmit",
+    "test": "node node_modules/vitest/vitest.mjs run",
+    "test:integration": "node node_modules/vitest/vitest.mjs run tests/integration",
+    "db:seed": "node --import tsx scripts/seed.ts",
+    "db:indexes": "node --import tsx scripts/indexes.ts",
+    "format": "node node_modules/prettier/bin/prettier.cjs --write src scripts tests",
+    "test:smoke": "node --import tsx scripts/smoke.ts",
+    "test:release": "node --import tsx scripts/verify-release.ts",
+    "preview": "node --import tsx scripts/dev.ts --production",
+    "db:prepare": "node --import tsx scripts/prepare-release.ts",
+    "db:reset-demo": "node --import tsx scripts/reset-demo.ts",
+    "verify": "node --import tsx scripts/verify.ts",
+    "browser:install": "node node_modules/playwright/cli.js install chromium",
+    "test:browser": "node --import tsx scripts/verify-release.ts --browser"
+  },
+  "dependencies": {
+    "bcryptjs": "3.0.3",
+    "lucide-react": "1.54.0",
+    "mongoose": "9.11.1",
+    "next": "16.4.0",
+    "next-auth": "5.0.0-beta.32",
+    "react": "19.3.0",
+    "react-dom": "19.3.0",
+    "recharts": "3.10.1",
+    "zod": "4.6.5"
+  },
+  "devDependencies": {
+    "@playwright/test": "1.64.0",
+    "@tailwindcss/postcss": "4.3.3",
+    "@types/node": "26.6.4",
+    "@types/react": "19.3.0",
+    "@types/react-dom": "19.3.0",
+    "dotenv": "18.0.7",
+    "eslint": "9.39.5",
+    "eslint-config-next": "16.4.0",
+    "mongodb-memory-server": "11.3.0",
+    "prettier": "3.9.9",
+    "tailwindcss": "4.3.3",
+    "tsx": "4.23.15",
+    "typescript": "6.0.3",
+    "vitest": "5.0.3"
+  },
+  "engines": {
+    "node": ">=24 <25"
+  },
+  "type": "module"
+}
